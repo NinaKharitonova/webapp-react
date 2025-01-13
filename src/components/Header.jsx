@@ -24,6 +24,9 @@ export default function Header() {
               <Link className="nav-link" to="/about">
                 AboutPage
               </Link>
+              <Link className="nav-link" to="/movies">
+                Lista Film
+              </Link>
             </div>
           </div>
         </div>

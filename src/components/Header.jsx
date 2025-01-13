@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
+
 export default function Header() {
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            Navbar
-          </a>
+          <Link className="navbar-brand" to="/">
+            WebApp
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -19,18 +21,9 @@ export default function Header() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <a className="nav-link active" aria-current="page" href="#">
-                Home
-              </a>
-              <a className="nav-link" href="#">
-                Features
-              </a>
-              <a class="nav-link" href="#">
-                Pricing
-              </a>
-              <a className="nav-link disabled" aria-disabled="true">
-                Disabled
-              </a>
+              <Link className="nav-link" to="/about">
+                AboutPage
+              </Link>
             </div>
           </div>
         </div>

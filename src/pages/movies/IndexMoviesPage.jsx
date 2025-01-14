@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function IndexMoviesPage() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    const url = "http://localhost:3005/api/movie";
+    const url = import.meta.env.VITE_BACKEND_URL + "api/movie";
 
     fetch(url)
       .then((res) => res.json())
@@ -16,10 +17,12 @@ export default function IndexMoviesPage() {
   return (
     <>
       <div className="container pt-4">
-        <h1>Lista film</h1>
+        <h1>Lista Movie</h1>
         <ul>
           {movies.map((movie) => (
-            <li key={movie.id}>{movie.title}</li>
+            <li key={movie.id}>
+              <Link to={"/movies/" + movie.id}>{movie.title}</Link>
+            </li>
           ))}
         </ul>
       </div>

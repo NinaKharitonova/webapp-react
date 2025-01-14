@@ -5,6 +5,7 @@ import DefaultLayout from "./layouts/DefaultLayout";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import IndexMoviesPage from "./pages/movies/IndexMoviesPage";
+import ShowMoviesPage from "./pages/movies/ShowMoviesPage";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -21,6 +22,7 @@ function App() {
             {/** Rotte della lista dei film */}
             <Route path="movies">
               <Route index element={<IndexMoviesPage />}></Route>
+              <Route path=":id" element={<ShowMoviesPage />}></Route>
             </Route>
           </Route>
         </Routes>
